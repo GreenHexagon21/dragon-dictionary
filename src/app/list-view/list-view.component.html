@@ -1,0 +1,33 @@
+<div class="container" *ngFor="let i of dragons">
+    <div class="card">
+      <div routerLink="/detail/{{i.id}}" class="card-body">
+        <div class="row">
+          <div class="col-md-2">
+            <li><small class="text-muted">Name</small></li>
+            <li>{{ i.name }}</li>
+          </div>
+          <div class="col-md-2">
+            <li><small class="text-muted">Type</small></li>
+            <li>{{ i.type }}</li>
+          </div>
+          <div class="col-md-2">
+            <li><small class="text-muted">Size</small></li>
+            <li>{{ i.size }}</li>
+          </div>
+          <div class="col-md-3">
+            <li><small class="text-muted">Description</small></li>
+            <li>{{ i.description }}</li>
+          </div>
+          <div class="col-md-3">
+            <li><small class="text-muted">Picture Url</small></li>
+            <li>{{ i.picurl }}</li>
+          </div>
+          <div class="col-md-12 d-flex p-2 flex-row-reverse">
+            <button class="btn btn-info" routerLink="/edit/{{i.id}}">
+                Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

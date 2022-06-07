@@ -1,0 +1,7 @@
+<h2>Dragons</h2>
+<div class="dragons-menu">
+    <a *ngFor="let dragon of dragons"
+    routerLink="/detail/{{dragon.id}}">
+    {{dragon.name}}
+  </a>
+</div>

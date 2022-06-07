@@ -1,0 +1,33 @@
+<div *ngIf="dragon; else createBlock">
+    <h2>{{dragon.name | uppercase}}</h2>
+    <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+    <div class="list-group">
+      <label for="dragon-name">Dragon name: </label>
+      <input class="list-group-item" id="dragon-name" [(ngModel)]="dragon.name" placeholder="name">
+      <label for="dragon-type">Dragon Type: </label>
+      <input class="list-group-item" id="dragon-type" [(ngModel)]="dragon.type" placeholder="type">
+      <label for="dragon-size">Dragon Size: </label>
+      <input class="list-group-item" id="dragon-size" [(ngModel)]="dragon.size" placeholder="size">
+      <label for="dragon-desc">Dragon Description: </label>
+      <input class="list-group-item" id="dragon-desc" [(ngModel)]="dragon.description" placeholder="description">
+      <label for="dragon-picurl">Dragon Picture URL: </label>
+      <input class="list-group-item" id="dragon-picurl" [(ngModel)]="dragon.picurl" placeholder="picurl">
+    </div>
+    <img class="list-group-item" width="300" src={{dragon.picurl}}>
+</div>
+<ng-template #createBlock>
+  <button type="button" class="btn btn-primary" (click)="goBack()">Go Back</button>
+  <button type="button" class="btn btn-primary" (click)="onCreate()">Create</button>
+  <div class="list-group">
+    <label for="dragon-name">Dragon name: </label>
+    <input class="list-group-item" id="dragon-name" [(ngModel)]="newDragon.name" placeholder="name">
+    <label for="dragon-type">Dragon Type: </label>
+    <input class="list-group-item" id="dragon-type" [(ngModel)]="newDragon.type" placeholder="type">
+    <label for="dragon-size">Dragon Size: </label>
+    <input class="list-group-item" id="dragon-size" [(ngModel)]="newDragon.size" placeholder="size">
+    <label for="dragon-desc">Dragon Description: </label>
+    <input class="list-group-item" id="dragon-desc" [(ngModel)]="newDragon.description" placeholder="description">
+    <label for="dragon-picurl">Dragon Picture URL: </label>
+    <input class="list-group-item" id="dragon-picurl" [(ngModel)]="newDragon.picurl" placeholder="picurl">
+  </div>
+</ng-template>

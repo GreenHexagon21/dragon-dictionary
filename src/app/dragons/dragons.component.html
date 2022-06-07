@@ -1,0 +1,9 @@
+
+<button class="btn btn-primary" routerLink="/create/null">Create</button>
+<button class="btn btn-secondary" (click)="toggleView()">Change View</button>
+<div *ngIf="isCard; else list">
+    <dd-card-view [dragons]="dragons"></dd-card-view>
+</div>
+<ng-template #list>
+    <dd-list-view [dragons]="dragons"></dd-list-view>
+</ng-template>

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+    <div class="col" *ngFor="let i of dragons">
+      <div class="card border-success mb-3" style="width: 25rem;" >
+        <div>
+          <div class="card-body"  routerLink="/detail/{{i.id}}">
+            <li><small class="text-muted">Name</small></li>
+            <li class="card-text">{{ i.name }}</li>
+         
+            <li><small class="text-muted">Type</small></li>
+            <li class="card-text">{{ i.type }}</li>
+
+            <li><small class="text-muted">Size</small></li>
+            <li class="card-text">{{ i.size }}</li>
+
+            <li><small class="text-muted">Description</small></li>
+            <li class="card-text">{{ i.description }}</li>
+
+          </div>
+          <img class="card-img-bottom" src="{{i.picurl}}" alt="Card image cap">
+          <div class="d-flex p-2 flex-row-reverse">
+            <button class="btn btn-info" routerLink="/edit/{{i.id}}">
+                Edit
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>

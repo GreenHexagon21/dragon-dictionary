@@ -1,0 +1,28 @@
+<div *ngIf="dragon">
+    <h2>{{dragon.name | uppercase}}</h2>
+    <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+    <div>
+      <div for="dragon-name">Name: {{dragon.name}} </div>
+      <label for="dragon-type">Type: {{dragon.type}}</label>
+      <label for="dragon-size">Size: {{dragon.size}}</label>
+      <label for="dragon-desc">Description: {{dragon.description}}</label>
+      <label for="dragon-picurl">Picture URL: {{dragon.picurl}}</label>
+      <button class="btn btn-primary" [class.selected] = "dragon === dragon" (click)="openSm(content)">Delete Dragon</button>
+    </div>
+    <img width="300" src={{dragon.picurl}}>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Dragon?</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p>Er you sure you want to delete this dragon?&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">No</button>
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click'); deleteDragon(dragon.id)">Yes</button>
+      </div>
+    </ng-template>
+    
+</div>
+
